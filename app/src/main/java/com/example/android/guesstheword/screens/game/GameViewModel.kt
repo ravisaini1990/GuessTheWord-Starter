@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel
 class GameViewModel :ViewModel() {
 
     // The current word
-    val _word = MutableLiveData<String>()
+    private val _word = MutableLiveData<String>()
     val word: LiveData<String>
     get() = _word
 

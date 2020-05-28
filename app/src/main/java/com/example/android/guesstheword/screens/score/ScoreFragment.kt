@@ -52,12 +52,8 @@ class ScoreFragment : Fragment() {
                 container,
                 false
         )
+        binding.scoreViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.scoreText.text = viewModel.score.toString()
     }
 }
