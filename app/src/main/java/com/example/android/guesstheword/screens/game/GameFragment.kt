@@ -34,6 +34,8 @@ import com.example.android.guesstheword.databinding.GameFragmentBinding
  */
 class GameFragment : Fragment() {
 
+
+
     private lateinit var binding: GameFragmentBinding
 
     private lateinit var viewModel: GameViewModel
@@ -73,7 +75,7 @@ class GameFragment : Fragment() {
     private fun gameFinished() {
         Toast.makeText(activity, "Game has just finished", Toast.LENGTH_SHORT).show()
         val action = GameFragmentDirections.actionGameToScore()
-        action.score = viewModel.score.value ?: 0
+        action.score = viewModel.score
         NavHostFragment.findNavController(this).navigate(action)
     }
 
@@ -93,10 +95,10 @@ class GameFragment : Fragment() {
     /** Methods for updating the UI **/
 
     private fun updateWordText() {
-        binding.wordText.text = viewModel.word.value
+        binding.wordText.text = viewModel.word
     }
 
     private fun updateScoreText() {
-        binding.scoreText.text = viewModel.score.value.toString()
+        binding.scoreText.text = viewModel.score.toString()
     }
 }
