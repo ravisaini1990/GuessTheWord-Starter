@@ -56,9 +56,6 @@ class GameFragment : Fragment() {
         // to all the data in the ViewModel
         binding.gameViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-
-        /** Setting up LiveData observation relationship **/
-
         //Game finish
         viewModel.eventGameFinish.observe(viewLifecycleOwner, Observer {
             hasFinished ->
